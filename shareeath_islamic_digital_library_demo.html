@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shareeath — Islamic Digital Library</title>
+<style>
+:root{--ink:#17231d;--muted:#68766d;--green:#145b43;--green2:#1c7555;--gold:#c8a96b;--paper:#f7f7f1;--white:#fff;--line:#e3e8df;--shadow:0 18px 50px #173d2b12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans Malayalam",system-ui,-apple-system,sans-serif;line-height:1.65}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{background:#103d2f;color:#f9f6eb;padding:10px 5vw;text-align:center;font-size:12px;letter-spacing:.12em}.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;background:#fff;border-bottom:1px solid var(--line);gap:20px}.brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.02em}.brandmark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--green);color:#fff;font-size:22px}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.12em}.navlinks{display:flex;align-items:center;gap:22px}.navlinks a{color:var(--ink);text-decoration:none;font-size:14px}.btn{border:0;border-radius:999px;padding:11px 18px;background:var(--green);color:#fff;font-weight:650}.btn:hover{background:var(--green2)}.btn.outline{background:transparent;color:var(--green);border:1px solid #bfd0c3}.hero{padding:76px 5vw 62px;background:radial-gradient(ellipse at 85% 20%,#dce9d9 0,transparent 35%),linear-gradient(135deg,#f7f7f1,#eef3e9);display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:800}.hero h1{font-size:clamp(36px,5.5vw,66px);line-height:1.12;letter-spacing:-.045em;margin:16px 0}.hero h1 span{color:var(--green)}.hero p{max-width:600px;color:#59685f;font-size:17px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero-art{min-height:300px;border-radius:28px;background:linear-gradient(145deg,#174d39,#0d3026);color:#f9f3df;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:30px;box-shadow:var(--shadow)}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff26;border-radius:50%;width:270px;height:270px}.hero-art:after{width:350px;height:350px}.arabic{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:clamp(38px,5vw,62px);direction:rtl;text-align:center;z-index:1}.hero-art p{color:#e7e6d7;text-align:center;font-size:13px;z-index:1}.statrow{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}.stat strong{display:block;font-size:23px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}section{padding:62px 5vw}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}.sectionhead h2{font-size:clamp(25px,3vw,38px);letter-spacing:-.035em;margin:7px 0}.sectionhead p{margin:0;color:var(--muted)}.toolbar{display:grid;grid-template-columns:1fr 220px;gap:12px;margin:20px 0 25px}.field{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:13px 15px;outline:none;color:var(--ink)}.field:focus{border-color:var(--green);box-shadow:0 0 0 3px #145b4314}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:21px;box-shadow:0 5px 20px #153c2510;display:flex;flex-direction:column;min-height:225px;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.cardtop{display:flex;justify-content:space-between;align-items:center;gap:8px}.num{font-size:12px;color:var(--green);background:#eaf2e9;border-radius:999px;padding:5px 10px;font-weight:800}.tag{font-size:11px;color:#7c6537;background:#f7f0df;padding:5px 9px;border-radius:999px}.card h3{font-size:18px;line-height:1.45;margin:16px 0 8px}.card p{font-size:13px;color:var(--muted);margin:0 0 18px;flex:1}.read{border:0;background:none;color:var(--green);font-weight:800;text-align:left;padding:0}.empty{padding:40px;text-align:center;color:var(--muted);grid-column:1/-1}.note{margin-top:26px;border-left:3px solid var(--gold);background:#f3f0e5;padding:16px 18px;border-radius:0 12px 12px 0;color:#655c47;font-size:13px}.library{background:#fff}.adminband{background:#123f30;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:25px;border-radius:24px;padding:28px 32px}.adminband p{margin:4px 0 0;color:#d4e0d5;font-size:14px}.adminband .btn{background:#e9d8ad;color:#173c2c}.footer{background:#0c2d23;color:#dfe8dd;padding:32px 5vw;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}.footer strong{color:#fff}.modalback{position:fixed;inset:0;background:#071c15a8;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modalback.show{display:flex}.modal{background:#fff;border-radius:22px;padding:28px;width:min(100%,540px);max-height:90vh;overflow:auto;box-shadow:0 30px 90px #0003}.modal h2{margin:0 0 8px}.modal p{color:var(--muted);font-size:13px}.formstack{display:grid;gap:12px;margin-top:20px}.formstack label{font-size:13px;font-weight:700}.formstack label .field{display:block;margin-top:6px}.close{float:right;border:0;background:#eef2eb;border-radius:50%;width:34px;height:34px;font-size:20px}.hidden{display:none!important}.adminpanel{padding:24px;background:#f4f7f1;border-radius:18px;margin-top:18px}.adminpanel h3{margin-top:0}.adminlist{display:grid;gap:8px}.adminitem{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px}.danger{background:#fff0ed;color:#a53628;border:1px solid #f1c8c0;border-radius:999px;padding:6px 10px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#123f30;color:white;padding:12px 18px;border-radius:12px;display:none;z-index:20}.toast.show{display:block}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:50px}.hero-art{min-height:230px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks a{display:none}}@media(max-width:560px){.grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}.hero{padding-left:6vw;padding-right:6vw}.nav{padding:14px 5vw}.adminband{align-items:start;flex-direction:column}.statrow{gap:18px}section{padding:45px 5vw}}
+</style>
+</head>
+<body>
+<div class="top">A SPACE FOR ISLAMIC KNOWLEDGE · അറിവ് പങ്കുവെക്കാം</div>
+<header class="nav">
+  <div class="brand"><div class="brandmark">۞</div><div>SHAREEATH<small>ISLAMIC DIGITAL LIBRARY</small></div></div>
+  <nav class="navlinks"><a href="#home">Home</a><a href="#masalas">Mas’alas</a><a href="#about">About</a><button class="btn" onclick="openLogin()">Admin Login ↗</button></nav>
+</header>
+<main>
+<section class="hero" id="home">
+ <div><div class="eyebrow">KNOWLEDGE · GUIDANCE · COMMUNITY</div><h1>Learn with clarity.<br><span>Live with purpose.</span></h1>
+ <p>ഇസ്‌ലാമിക വിജ്ഞാനം ലളിതമായി വായിക്കാനും തിരയാനും പഠിക്കാനുമുള്ള ഡിജിറ്റൽ ലൈബ്രറി. അറിവിലേക്കുള്ള നിങ്ങളുടെ ഇടം.</p>
+ <div class="hero-actions"><a class="btn" href="#masalas" style="text-decoration:none">Explore Mas’alas ↓</a><button class="btn outline" onclick="openLogin()">Admin Access</button></div>
+ <div class="statrow"><div class="stat"><strong id="countStat">100</strong><span>MAS’ALAS</span></div><div class="stat"><strong>Malayalam</strong><span>PRIMARY LANGUAGE</span></div><div class="stat"><strong>Open</strong><span>LEARNING SPACE</span></div></div></div>
+ <div class="hero-art"><div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><p>A thoughtful space for learning and reflection</p><div style="z-index:1;letter-spacing:.22em;font-size:10px;color:#d8c38f">QURAN · SUNNAH · KNOWLEDGE</div></div>
+</section>
+<section class="library" id="masalas">
+ <div class="sectionhead"><div><div class="eyebrow">THE KNOWLEDGE COLLECTION</div><h2>Mas’alas Library</h2><p>വിഷയമനുസരിച്ച് തിരയുക, വായിക്കുക, പഠിക്കുക.</p></div><span class="num" id="resultCount">100 items</span></div>
+ <div class="toolbar"><input class="field" id="search" placeholder="Search in Malayalam or English… / തിരയുക" oninput="renderMasalas()"><select class="field" id="category" onchange="renderMasalas()"><option value="">All categories</option><option>ത്വഹാറത്ത്</option><option>നമസ്കാരം</option><option>നോമ്പ്</option><option>സകാത്ത്</option><option>ഹജ്ജ് & ഉംറ</option><option>ദൈനംദിന ജീവിതം</option><option>ഖുർആൻ & ദുആ</option><option>കുടുംബം & സ്വഭാവം</option></select></div>
+ <div class="grid" id="masalaGrid"></div>
+ <div class="note"><strong>ശ്രദ്ധിക്കുക:</strong> ഈ പേജിലെ 100 വിഷയങ്ങൾ പഠനത്തിനുള്ള പ്രാരംഭ കുറിപ്പുകളാണ്; അന്തിമ ഫത്‌വകളല്ല. മദ്ഹബ്, സാഹചര്യം, പ്രാദേശിക പണ്ഡിതരുടെ മാർഗനിർദേശം എന്നിവ അനുസരിച്ച് വിധികൾ വ്യത്യാസപ്പെടാം. പ്രസിദ്ധീകരിക്കുന്നതിന് മുമ്പ് യോഗ്യനായ പണ്ഡിതൻ പരിശോധിക്കുക.</div>
+</section>
+<section id="about"><div class="adminband"><div><div class="eyebrow" style="color:#d9c58f">LIBRARY ADMINISTRATION</div><h2 style="margin:5px 0">Help the library grow.</h2><p>പുതിയ Mas’alas ചേർക്കാനും നിലവിലുള്ളവ നിയന്ത്രിക്കാനും അഡ്മിൻ പ്രവേശിക്കുക.</p></div><button class="btn" onclick="openLogin()">Open Admin Panel ↗</button></div></section>
+</main>
+<footer class="footer"><div><strong>SHAREEATH</strong><br>Islamic Digital Library</div><div>Made for learning with care.<br>Content should be verified by qualified scholars.</div><div>© <span id="year"></span> Shareeath</div></footer>
+
+<div class="modalback" id="loginModal" role="dialog" aria-modal="true" aria-label="Admin login"><div class="modal"><button class="close" onclick="closeModal('loginModal')" aria-label="Close">×</button><div class="eyebrow">RESTRICTED ACCESS</div><h2>Admin Login</h2><p>Enter your admin password to manage library content.</p><form class="formstack" id="loginForm"><label>Password<input class="field" type="password" id="passwordInput" placeholder="Enter password" autocomplete="current-password" required></label><button class="btn" type="submit">Login securely</button><div id="loginError" style="color:#b33;font-size:13px" aria-live="polite"></div></form><p style="font-size:11px">Password is not displayed on screen.</p></div></div>
+<div class="modalback" id="adminModal" role="dialog" aria-modal="true" aria-label="Admin panel"><div class="modal" style="width:min(100%,700px)"><button class="close" onclick="closeModal('adminModal')" aria-label="Close">×</button><div class="eyebrow">LIBRARY MANAGEMENT</div><h2>Admin Panel</h2><p>Add and manage Mas’alas in this browser demo.</p><div class="adminpanel"><h3>Add a Mas’ala</h3><form class="formstack" id="addForm"><label>Title<input class="field" id="newTitle" required placeholder="Mas’ala title"></label><label>Category<select class="field" id="newCategory"><option>ത്വഹാറത്ത്</option><option>നമസ്കാരം</option><option>നോമ്പ്</option><option>സകാത്ത്</option><option>ഹജ്ജ് & ഉംറ</option><option>ദൈനംദിന ജീവിതം</option><option>ഖുർആൻ & ദുആ</option><option>കുടുംബം & സ്വഭാവം</option></select></label><label>Short explanation<textarea class="field" id="newSummary" rows="3" required placeholder="Write a careful, verified explanation…"></textarea></label><button class="btn" type="submit">＋ Add Mas’ala</button></form></div><div class="adminpanel"><h3>Change admin password</h3><p>Demo only: this changes a password stored in this browser, not a secure server account.</p><form class="formstack" id="changeForm"><label>Current password<input class="field" type="password" id="currentPw" required></label><label>New password<input class="field" type="password" id="newPw" minlength="8" required placeholder="At least 8 characters"></label><label>Confirm new password<input class="field" type="password" id="confirmPw" minlength="8" required></label><button class="btn" type="submit">Update password</button><div id="pwMessage" aria-live="polite"></div></form></div><div class="adminpanel"><h3>Manage added Mas’alas</h3><div class="adminlist" id="adminList"></div><button class="btn outline" style="margin-top:16px" onclick="logout()">Log out</button></div></div></div>
+<div class="modalback" id="detailModal" role="dialog" aria-modal="true"><div class="modal"><button class="close" onclick="closeModal('detailModal')" aria-label="Close">×</button><div class="eyebrow" id="detailCategory"></div><h2 id="detailTitle"></h2><p id="detailBody" style="white-space:pre-wrap;color:#34483c;font-size:16px"></p><div class="note">ഈ കുറിപ്പ് പഠനസഹായിയാണ്. പ്രത്യേക സാഹചര്യത്തിലെ മതവിധിക്ക് യോഗ്യനായ പണ്ഡിതനെ സമീപിക്കുക.</div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const seed = [
+["വുദൂവിന്റെ പ്രാധാന്യം","ത്വഹാറത്ത്","നമസ്കാരത്തിന് മുമ്പ് ശുദ്ധി ഉറപ്പാക്കുന്നത് ഇസ്‌ലാമിക ആരാധനയിലെ പ്രധാന ഭാഗമാണ്. വുദൂവിന്റെ നിബന്ധനകളും രീതിയും പഠിക്കുക."],
+["വുദൂവിന്റെ ഫർദുകൾ പഠിക്കുക","ത്വഹാറത്ത്","വുദൂവിന്റെ നിർബന്ധ ഘടകങ്ങൾ മദ്ഹബ് അനുസരിച്ച് ശരിയായി പഠിച്ച് പ്രയോഗിക്കുക."],
+["വുദൂ മുറിയുന്ന കാര്യങ്ങൾ","ത്വഹാറത്ത്","വുദൂ നിലനിൽക്കുന്നുണ്ടോ എന്ന സംശയത്തിൽ ഉറപ്പും സംശയവും സംബന്ധിച്ച ഫിഖ്ഹ് നിയമങ്ങൾ മനസ്സിലാക്കുക."],
+["കുളി നിർബന്ധമാകുന്ന സാഹചര്യങ്ങൾ","ത്വഹാറത്ത്","ഗുസ്ൽ ആവശ്യമായ സാഹചര്യങ്ങളും അതിന്റെ ശരിയായ രീതിയും വിശ്വസനീയമായ ഫിഖ്ഹ് ഗ്രന്ഥത്തിൽ നിന്ന് പഠിക്കുക."],
+["തയമ്മും എപ്പോൾ?","ത്വഹാറത്ത്","വെള്ളം ലഭ്യമല്ലാത്തതോ ഉപയോഗിക്കുന്നത് ഹാനികരമായതോ ആയ സാഹചര്യങ്ങളിൽ തയമ്മുമിന്റെ നിയമങ്ങൾ പരിശോധിക്കുക."],
+["വസ്ത്രത്തിന്റെ ശുദ്ധി","ത്വഹാറത്ത്","നമസ്കാരത്തിനുള്ള വസ്ത്രം, ശരീരം, സ്ഥലം എന്നിവയുടെ ശുദ്ധിയെക്കുറിച്ചുള്ള അടിസ്ഥാനങ്ങൾ പഠിക്കുക."],
+["നജാസത്ത് നീക്കം ചെയ്യൽ","ത്വഹാറത്ത്","അശുദ്ധി നീക്കുന്നതിനുള്ള രീതികൾ അശുദ്ധിയുടെ സ്വഭാവവും മദ്ഹബ് വിധിയും അനുസരിച്ച് മനസ്സിലാക്കുക."],
+["വുദൂവിൽ വെള്ളം പാഴാക്കാതിരിക്കുക","ത്വഹാറത്ത്","ശുദ്ധീകരണത്തിൽ ആവശ്യത്തിന് മാത്രം വെള്ളം ഉപയോഗിക്കുകയും പാഴാക്കൽ ഒഴിവാക്കുകയും ചെയ്യുക."],
+["മുറിവുള്ളപ്പോൾ ശുദ്ധീകരണം","ത്വഹാറത്ത്","മുറിവോ ബാൻഡേജോ ഉള്ളവർക്ക് ബാധകമായ പ്രത്യേക ഇളവുകൾ പണ്ഡിതനോട് ചോദിച്ച് മനസ്സിലാക്കുക."],
+["ശുദ്ധിയെക്കുറിച്ചുള്ള സംശയം","ത്വഹാറത്ത്","അനാവശ്യ സംശയങ്ങളിൽ പെടാതെ, വ്യക്തമായ അറിവിന്റെ അടിസ്ഥാനത്തിൽ പ്രവർത്തിക്കാൻ പഠിക്കുക."],
+["നമസ്കാരത്തിന്റെ സമയം","നമസ്കാരം","ഓരോ ഫർദ് നമസ്കാരവും അതിന്റെ നിശ്ചിത സമയത്തിനുള്ളിൽ നിർവഹിക്കുക."],
+["നമസ്കാരത്തിന് നിയ്യത്ത്","നമസ്കാരം","ആരാധനയുടെ ഉദ്ദേശ്യം മനസ്സിൽ വ്യക്തമായിരിക്കണം; നിയ്യത്തിന്റെ വിശദാംശങ്ങൾ സ്വന്തം മദ്ഹബ് പ്രകാരം പഠിക്കുക."],
+["ഖിബ്‌ലയുടെ ദിശ","നമസ്കാരം","സാധ്യമാകുന്നത്ര ഖിബ്‌ലയുടെ ദിശ ഉറപ്പാക്കി നമസ്കരിക്കുക."],
+["നമസ്കാരത്തിലെ വസ്ത്രധാരണം","നമസ്കാരം","ഔറത്ത് മറയ്ക്കലും ശുദ്ധമായ വസ്ത്രം ധരിക്കലും സംബന്ധിച്ച നിബന്ധനകൾ പഠിക്കുക."],
+["ഫർദ് നമസ്കാരങ്ങളുടെ എണ്ണം","നമസ്കാരം","ദിവസേനയുള്ള അഞ്ച് ഫർദ് നമസ്കാരങ്ങൾ ഇസ്‌ലാമിന്റെ പ്രധാന ബാധ്യതകളിൽപ്പെടുന്നു."],
+["ജമാഅത്ത് നമസ്കാരം","നമസ്കാരം","ജമാഅത്തിന്റെ മഹത്വവും ഇമാമിനെ പിന്തുടരാനുള്ള നിയമങ്ങളും വിശ്വസനീയമായി പഠിക്കുക."],
+["ഇമാമിനെ പിന്തുടരൽ","നമസ്കാരം","ഇമാമിന്റെ ചലനങ്ങളെ പിന്തുടരുക; അദ്ദേഹത്തിന് മുമ്പേ നീങ്ങാതിരിക്കുക."],
+["നമസ്കാരത്തിൽ ശ്രദ്ധ","നമസ്കാരം","അർത്ഥം മനസ്സിലാക്കുകയും ശ്രദ്ധ തിരിക്കുന്ന കാര്യങ്ങൾ കുറയ്ക്കുകയും ചെയ്ത് ഖുശൂഅ് വളർത്തുക."],
+["നമസ്കാരം നഷ്ടപ്പെട്ടാൽ","നമസ്കാരം","നഷ്ടപ്പെട്ട നമസ്കാരത്തെക്കുറിച്ചുള്ള ഖദാ നിയമങ്ങൾ സാഹചര്യത്തിനും മദ്ഹബിനും അനുസരിച്ച് ചോദിച്ച് പഠിക്കുക."],
+["യാത്രയിലെ നമസ്കാരം","നമസ്കാരം","യാത്രക്കാരുടെ നമസ്കാര ഇളവുകൾക്ക് പ്രത്യേക നിബന്ധനകളുണ്ട്; യാത്രയുടെ സാഹചര്യവും മദ്ഹബും അനുസരിച്ച് പരിശോധിക്കുക."],
+["സുന്നത്ത് നമസ്കാരങ്ങൾ","നമസ്കാരം","ഫർദിന് പുറമേയുള്ള സുന്നത്ത് നമസ്കാരങ്ങളുടെ പ്രാധാന്യവും സമയവും പഠിക്കുക."],
+["ജുമുഅ നമസ്കാരം","നമസ്കാരം","ജുമുഅയുടെ ബാധ്യത, നിബന്ധനകൾ, ഖുത്ബയുമായി ബന്ധപ്പെട്ട മര്യാദകൾ എന്നിവ പഠിക്കുക."],
+["സുജൂദുസ്സഹ്‌വ്","നമസ്കാരം","നമസ്കാരത്തിലെ ചില പിഴവുകൾക്ക് ബാധകമായ പരിഹാരങ്ങൾ മദ്ഹബ് അനുസരിച്ച് വ്യത്യാസപ്പെടാം."],
+["നമസ്കാരത്തിലെ ഖിറാഅത്ത്","നമസ്കാരം","ഖുർആൻ പാരായണത്തിന്റെ അടിസ്ഥാന നിയമങ്ങളും ഉച്ചാരണവും പഠിച്ച് ശരിയാക്കുക."],
+["നമസ്കാരത്തിനു ശേഷമുള്ള ദുആ","നമസ്കാരം","പ്രാമാണികമായ ദിക്റുകളും ദുആകളും പഠിച്ച് പതിവാക്കുക; പ്രത്യേക എണ്ണങ്ങൾക്ക് തെളിവ് പരിശോധിക്കുക."],
+["റമദാൻ നോമ്പിന്റെ നിയ്യത്ത്","നോമ്പ്","റമദാൻ നോമ്പിന്റെ നിയ്യത്തുമായി ബന്ധപ്പെട്ട സമയവും രീതിയും മദ്ഹബ് പ്രകാരം മനസ്സിലാക്കുക."],
+["നോമ്പ് മുറിയുന്ന കാര്യങ്ങൾ","നോമ്പ്","നോമ്പിനെ ബാധിക്കുന്ന കാര്യങ്ങൾ വ്യക്തമായി പഠിക്കുക; സംശയമുള്ള സംഭവത്തിൽ പണ്ഡിതനോട് ചോദിക്കുക."],
+["മറന്നുകൊണ്ട് ഭക്ഷണം കഴിച്ചാൽ","നോമ്പ്","മറവിയാൽ സംഭവിക്കുന്ന കാര്യങ്ങളെക്കുറിച്ച് പ്രാമാണിക ഹദീസുകളും സ്വന്തം മദ്ഹബിന്റെ വിശദീകരണവും പരിശോധിക്കുക."],
+["രോഗവും നോമ്പും","നോമ്പ്","രോഗം മൂലം നോമ്പ് ബുദ്ധിമുട്ടോ ഹാനിയോ ഉണ്ടാക്കുമെങ്കിൽ ബാധകമായ ഇളവുകളും പകരംവയ്ക്കലും പഠിക്കുക."],
+["യാത്രക്കാരന്റെ നോമ്പ്","നോമ്പ്","യാത്രയിൽ നോമ്പ് സംബന്ധിച്ച ഇളവുകൾക്കും ഖദായ്ക്കും നിബന്ധനകളുണ്ട്; വ്യക്തിഗത സാഹചര്യം പരിശോധിക്കുക."],
+["പ്രായപൂർത്തിയും നോമ്പും","നോമ്പ്","നോമ്പിന്റെ മതപരമായ ബാധ്യത പ്രായപൂർത്തിയും മറ്റ് നിബന്ധനകളും ബന്ധപ്പെട്ടതാണ്."],
+["നോമ്പിൽ നല്ല സ്വഭാവം","നോമ്പ്","നോമ്പ് ഭക്ഷണപാനീയങ്ങൾ ഒഴിവാക്കുന്നതിലുപരി നാവും പെരുമാറ്റവും നിയന്ത്രിക്കാനുള്ള പരിശീലനമാണ്."],
+["സഹൂർ കഴിക്കൽ","നോമ്പ്","സഹൂർ കഴിക്കുന്നത് സുന്നത്തായി പ്രോത്സാഹിപ്പിക്കപ്പെട്ടിരിക്കുന്നു."],
+["ഇഫ്താർ സമയത്ത്","നോമ്പ്","സൂര്യാസ്തമയം ഉറപ്പായ ശേഷം നോമ്പ് തുറക്കുക; സമയത്തെക്കുറിച്ച് വിശ്വസനീയമായ പ്രാദേശിക കലണ്ടർ പിന്തുടരുക."],
+["ഖദാ നോമ്പ്","നോമ്പ്","നഷ്ടപ്പെട്ട നോമ്പുകൾ പകരംവയ്ക്കേണ്ട സാഹചര്യങ്ങളും സമയപരിധിയും മദ്ഹബ് പ്രകാരം പഠിക്കുക."],
+["ഫിദ്യയും കഫ്ഫാറയും","നോമ്പ്","ഫിദ്യയും കഫ്ഫാറയും വ്യത്യസ്ത നിയമങ്ങളാണ്; ബാധകമാണോ എന്ന് പണ്ഡിതനോട് ചോദിക്കുക."],
+["ഗർഭിണിയും മുലയൂട്ടുന്നവരും","നോമ്പ്","ആരോഗ്യസ്ഥിതി, ഭയം, മദ്ഹബ് എന്നിവയെ ആശ്രയിച്ച് നിയമങ്ങൾ വ്യത്യാസപ്പെടാം; യോഗ്യനായ പണ്ഡിതനും ആരോഗ്യവിദഗ്ധനും ഉപദേശം നൽകണം."],
+["നോമ്പിലെ ദുആ","നോമ്പ്","നോമ്പുകാലത്ത് ദുആക്കും ദിക്റിനും ഖുർആൻ പാരായണത്തിനും സമയം കണ്ടെത്തുക."],
+["റമദാനിലെ ഖുർആൻ","നോമ്പ്","ഖുർആൻ പാരായണം പതിവാക്കി അർത്ഥവും സന്ദേശവും മനസ്സിലാക്കാൻ ശ്രമിക്കുക."],
+["ശവ്വാൽ നോമ്പ്","നോമ്പ്","ശവ്വാൽ മാസത്തിലെ നോമ്പുകളെക്കുറിച്ചുള്ള സുന്നത്ത് വിശദാംശങ്ങൾ വിശ്വസനീയമായ ഹദീസ്-ഫിഖ്ഹ് സ്രോതസ്സുകളിൽ നിന്ന് പഠിക്കുക."],
+["സകാത്തിന്റെ ലക്ഷ്യം","സകാത്ത്","സകാത്ത് സമ്പത്ത് ശുദ്ധീകരിക്കാനും അർഹരായവർക്ക് സഹായമെത്തിക്കാനുമുള്ള നിർബന്ധിത ആരാധനയാണ്."],
+["സകാത്ത് ബാധകമാകുന്ന സമ്പത്ത്","സകാത്ത്","സമ്പത്തിന്റെ തരം, നിസാബ്, കാലാവധി തുടങ്ങിയ നിബന്ധനകൾ പ്രകാരം ബാധ്യത നിർണയിക്കണം."],
+["നിസാബ് എന്താണ്?","സകാത്ത്","നിസാബ് സകാത്ത് ബാധ്യത നിർണയിക്കുന്ന കുറഞ്ഞ സമ്പത്തുമായി ബന്ധപ്പെട്ട അളവാണ്; നിലവിലെ കണക്കുകൾ വിശ്വസനീയ സ്രോതസ്സിൽ പരിശോധിക്കുക."],
+["സകാത്ത് അർഹർ","സകാത്ത്","സകാത്ത് ലഭിക്കാവുന്ന വിഭാഗങ്ങൾ ഖുർആനിൽ പരാമർശിച്ചിട്ടുണ്ട്; യോഗ്യത കൃത്യമായി പരിശോധിക്കുക."],
+["സകാത്തുൽ ഫിത്വർ","സകാത്ത്","സകാത്തുൽ ഫിത്വറിന്റെ സമയവും അളവും നൽകേണ്ടവരും സ്വീകരിക്കേണ്ടവരും സംബന്ധിച്ച വിശദാംശങ്ങൾ മദ്ഹബ് പ്രകാരം പഠിക്കുക."],
+["വ്യാപാരസമ്പത്തിന്റെ സകാത്ത്","സകാത്ത്","വ്യാപാരത്തിനുള്ള സാധനങ്ങളും പണവും ഉൾപ്പെടുന്ന കണക്കുകൂട്ടൽ രീതികൾക്ക് യോഗ്യനായ പണ്ഡിതന്റെയോ വിദഗ്ധന്റെയോ സഹായം തേടുക."],
+["കടവും സകാത്തും","സകാത്ത്","കടം സകാത്ത് കണക്കിനെ എങ്ങനെ ബാധിക്കുന്നു എന്നത് കടത്തിന്റെ സ്വഭാവവും മദ്ഹബും അനുസരിച്ച് പരിശോധിക്കുക."],
+["സകാത്ത് കൃത്യമായി കണക്കാക്കൽ","സകാത്ത്","ആസ്തികൾ, ബാധകമായ ബാധ്യതകൾ, നിസാബ്, തീയതി എന്നിവ രേഖപ്പെടുത്തി വിശ്വസനീയമായ കണക്കുകൂട്ടൽ നടത്തുക."],
+["സകാത്ത് നേരിട്ട് നൽകൽ","സകാത്ത്","അർഹരായവർക്ക് സകാത്ത് കൈമാറുന്നതിലെ നിയമങ്ങളും ഏജന്റിലൂടെ നൽകുന്നതിന്റെ നിബന്ധനകളും പഠിക്കുക."],
+["ഹജ്ജിന്റെ അടിസ്ഥാന ആശയം","ഹജ്ജ് & ഉംറ","സാമ്പത്തികവും ശാരീരികവുമായ കഴിവുള്ളവർക്ക് നിശ്ചിത നിബന്ധനകളോടെ ഹജ്ജ് നിർബന്ധമാണ്."],
+["ഇഹ്റാമിന്റെ അർത്ഥം","ഹജ്ജ് & ഉംറ","ഇഹ്റാം ഹജ്ജ്/ഉംറയുടെ ആരാധനാവസ്ഥയിലേക്ക് പ്രവേശിക്കുന്നതുമായി ബന്ധപ്പെട്ടതാണ്; മിഖാത്തും നിയ്യത്തും പഠിക്കുക."],
+["മിഖാത്ത് എന്താണ്?","ഹജ്ജ് & ഉംറ","ഇഹ്റാമിൽ പ്രവേശിക്കേണ്ട നിശ്ചിത അതിർത്തികളെയാണ് മിഖാത്ത് എന്നു പറയുന്നത്."],
+["ത്വവാഫ്","ഹജ്ജ് & ഉംറ","കഅ്ബയെ ചുറ്റിയുള്ള ത്വവാഫിന്റെ നിബന്ധനകളും ക്രമവും പ്രാമാണികമായി പഠിക്കുക."],
+["സഅ്‌യ്","ഹജ്ജ് & ഉംറ","സ്വഫാ-മർവയ്ക്കിടയിലെ സഅ്‌യ് ഹജ്ജിന്റെയും ഉംറയുടെയും പ്രധാന കർമങ്ങളിൽ ഒന്നാണ്."],
+["അറഫയിലെ വഖ്ഫ്","ഹജ്ജ് & ഉംറ","അറഫയിൽ നിൽക്കൽ ഹജ്ജിന്റെ ഏറ്റവും പ്രധാനപ്പെട്ട കർമങ്ങളിൽ ഒന്നാണ്; സമയവും ക്രമവും ശ്രദ്ധിക്കുക."],
+["ഹജ്ജിലെ പെരുമാറ്റം","ഹജ്ജ് & ഉംറ","ക്ഷമ, സഹകരണം, മറ്റുള്ളവർക്ക് ബുദ്ധിമുട്ടുണ്ടാക്കാതിരിക്കൽ എന്നിവ ഹജ്ജിലെ പ്രധാന മര്യാദകളാണ്."],
+["ഉംറയുടെ കർമങ്ങൾ","ഹജ്ജ് & ഉംറ","ഇഹ്റാം, ത്വവാഫ്, സഅ്‌യ്, മുടി മുറിക്കൽ/ചുരുക്കൽ തുടങ്ങിയ കർമങ്ങളുടെ ക്രമം പഠിക്കുക."],
+["ഹജ്ജിനുള്ള തയ്യാറെടുപ്പ്","ഹജ്ജ് & ഉംറ","ആരോഗ്യം, രേഖകൾ, യാത്രാ ക്രമീകരണം, കർമങ്ങളുടെ പരിശീലനം എന്നിവ മുൻകൂട്ടി ഒരുക്കുക."],
+["ഹജ്ജിലെ സംശയങ്ങൾ","ഹജ്ജ് & ഉംറ","ഹജ്ജ് കർമങ്ങളിൽ പിഴവ് സംഭവിച്ചാൽ ഉടൻ വിശ്വസനീയമായ പണ്ഡിതനോട് ചോദിക്കുക; സ്വയം വിധി നിഗമനം ചെയ്യരുത്."],
+["മാതാപിതാക്കളോടുള്ള ബഹുമാനം","കുടുംബം & സ്വഭാവം","മാതാപിതാക്കളോട് നല്ല രീതിയിൽ സംസാരിക്കുകയും സാധ്യമായിടത്ത് അവരെ സഹായിക്കുകയും ചെയ്യുക."],
+["സത്യസന്ധത","കുടുംബം & സ്വഭാവം","വാക്കിലും പ്രവൃത്തിയിലും സത്യസന്ധത പാലിക്കുന്നത് ഇസ്‌ലാമിക സ്വഭാവത്തിന്റെ അടിസ്ഥാനമാണ്."],
+["അമാനത്ത് കാത്തുസൂക്ഷിക്കൽ","കുടുംബം & സ്വഭാവം","വിശ്വസിച്ച് ഏൽപ്പിച്ച വസ്തുവും വിവരവും ഉത്തരവാദിത്തത്തോടെ കാത്തുസൂക്ഷിക്കുക."],
+["അയൽക്കാരന്റെ അവകാശം","കുടുംബം & സ്വഭാവം","അയൽക്കാരെ ഉപദ്രവിക്കാതിരിക്കുകയും കഴിയുന്നത്ര സഹായിക്കുകയും ചെയ്യുക."],
+["ഗീബത്ത് ഒഴിവാക്കൽ","കുടുംബം & സ്വഭാവം","മറ്റൊരാളുടെ അഭാവത്തിൽ അയാൾക്ക് ഇഷ്ടമില്ലാത്ത സത്യം പറയുന്നതുമായി ബന്ധപ്പെട്ട ഗീബത്തിന്റെ ഗൗരവം മനസ്സിലാക്കുക."],
+["ക്ഷമയുടെ പ്രാധാന്യം","കുടുംബം & സ്വഭാവം","പ്രയാസങ്ങളിൽ ക്ഷമയും പ്രതികരണത്തിൽ നിയന്ത്രണവും വളർത്തുക."],
+["വാഗ്ദാനം പാലിക്കൽ","കുടുംബം & സ്വഭാവം","വാഗ്ദാനങ്ങൾ ഉത്തരവാദിത്തത്തോടെ പാലിക്കുക; പാലിക്കാൻ കഴിയില്ലെങ്കിൽ നേരത്തെ അറിയിക്കുക."],
+["സലാം പറയൽ","കുടുംബം & സ്വഭാവം","മുസ്‌ലിംകൾ തമ്മിലുള്ള സലാം സമാധാനത്തിന്റെയും സൗഹൃദത്തിന്റെയും അഭിവാദ്യമാണ്."],
+["അറിവ് തേടൽ","കുടുംബം & സ്വഭാവം","വിശ്വസനീയ അധ്യാപകരിൽ നിന്ന് അറിവ് തേടുകയും പഠിച്ചതിൽ സംശയം വന്നാൽ ചോദിക്കുകയും ചെയ്യുക."],
+["സമയം വിലമതിക്കൽ","കുടുംബം & സ്വഭാവം","ആരാധന, പഠനം, കുടുംബം, വിശ്രമം എന്നിവയ്ക്ക് സമതുലിതമായി സമയം ക്രമീകരിക്കുക."],
+["ഖുർആൻ പാരായണത്തിന്റെ മര്യാദ","ഖുർആൻ & ദുആ","ആദരവോടെയും ശ്രദ്ധയോടെയും പാരായണം ചെയ്യുക; ഉച്ചാരണം പഠിക്കാൻ യോഗ്യനായ അധ്യാപകന്റെ സഹായം തേടുക."],
+["ഖുർആൻ അർത്ഥം പഠിക്കൽ","ഖുർആൻ & ദുആ","വിശ്വസനീയമായ തഫ്സീർ ഉപയോഗിച്ച് അർത്ഥം പഠിക്കുകയും സന്ദേശം ജീവിതത്തിൽ പ്രയോഗിക്കുകയും ചെയ്യുക."],
+["ദുആയുടെ മര്യാദകൾ","ഖുർആൻ & ദുആ","വിനയത്തോടെയും പ്രതീക്ഷയോടെയും ദുആ ചെയ്യുക; പ്രാമാണികമായ ദുആകൾ പഠിക്കുക."],
+["രാവിലെയും വൈകുന്നേരവും ദിക്റ്","ഖുർആൻ & ദുആ","പ്രാമാണികമായ രാവിലെയും വൈകുന്നേരത്തെയും ദിക്റുകൾ പഠിച്ച് പതിവാക്കുക."],
+["ഇസ്തിഗ്ഫാർ","ഖുർആൻ & ദുആ","തെറ്റുകൾ തിരിച്ചറിഞ്ഞ് അല്ലാഹുവിനോട് പാപമോചനം തേടുകയും തെറ്റ് ആവർത്തിക്കാതിരിക്കാൻ ശ്രമിക്കുകയും ചെയ്യുക."],
+["സ്വലാത്ത് നബി","ഖുർആൻ & ദുആ","നബി ﷺ യുടെ മേൽ സ്വലാത്ത് ചൊല്ലുന്നത് പ്രോത്സാഹിപ്പിക്കപ്പെട്ട ആരാധനയാണ്."],
+["ദുആ സ്വീകരിക്കപ്പെടൽ","ഖുർആൻ & ദുആ","ദുആയിൽ ആത്മാർത്ഥത പുലർത്തുക; ഫലം ഉടൻ കാണാത്തപ്പോഴും നിരാശപ്പെടാതിരിക്കുക."],
+["ഖുർആൻ പഠിപ്പിക്കൽ","ഖുർആൻ & ദുആ","ശരിയായ ഉച്ചാരണം പഠിക്കുകയും അറിവ് മറ്റുള്ളവരുമായി ഉത്തരവാദിത്തത്തോടെ പങ്കിടുകയും ചെയ്യുക."],
+["ദിക്റിന്റെ അർത്ഥം","ഖുർആൻ & ദുആ","ദിക്റ് അല്ലാഹുവിനെ ഓർക്കുന്നതാണ്; വാക്കുകൾക്കൊപ്പം അർത്ഥവും മനസ്സിലാക്കാൻ ശ്രമിക്കുക."],
+["തൗബയുടെ അടിസ്ഥാനങ്ങൾ","ഖുർആൻ & ദുആ","തെറ്റ് ഉപേക്ഷിക്കുക, ഖേദിക്കുക, തിരികെ ചെയ്യാതിരിക്കാൻ ഉറച്ച തീരുമാനമെടുക്കുക; മറ്റുള്ളവരുടെ അവകാശം ബാധിച്ചാൽ അത് പരിഹരിക്കുക."],
+["ഹലാൽ ഉപജീവനം","ദൈനംദിന ജീവിതം","ന്യായമായും സത്യസന്ധമായും സമ്പാദിക്കുക; ഇടപാടുകളിൽ വഞ്ചന ഒഴിവാക്കുക."],
+["വ്യാപാരത്തിലെ സത്യസന്ധത","ദൈനംദിന ജീവിതം","വസ്തുവിന്റെ ദോഷങ്ങൾ മറച്ചുവയ്ക്കാതിരിക്കുകയും അളവിലും തൂക്കത്തിലും നീതി പാലിക്കുകയും ചെയ്യുക."],
+["കടം വാങ്ങലും തിരിച്ചടവും","ദൈനംദിന ജീവിതം","കടത്തിന്റെ നിബന്ധനകൾ വ്യക്തമായി മനസ്സിലാക്കുകയും തിരിച്ചടവിന് ഉത്തരവാദിത്തത്തോടെ ശ്രമിക്കുകയും ചെയ്യുക."],
+["പലിശ സംബന്ധിച്ച സംശയം","ദൈനംദിന ജീവിതം","പലിശയുമായി ബന്ധപ്പെട്ട ഇടപാടുകൾ സങ്കീർണ്ണമാകാം; കരാർ വിശദാംശങ്ങൾ യോഗ്യനായ പണ്ഡിതനോട് കാണിച്ച് ഉപദേശം തേടുക."],
+["ഭക്ഷണത്തിലെ ഹലാൽ-ഹറാം","ദൈനംദിന ജീവിതം","ഭക്ഷണത്തിന്റെ ഘടകങ്ങളും ഉറവിടവും സംബന്ധിച്ച് സംശയം വന്നാൽ വിശ്വസനീയമായ സർട്ടിഫിക്കേഷനും പണ്ഡിതോപദേശവും പരിശോധിക്കുക."],
+["വാഗ്ദത്ത കരാറുകൾ","ദൈനംദിന ജീവിതം","കരാറിലെ വ്യവസ്ഥകൾ വായിച്ച് മനസ്സിലാക്കുകയും അനീതിയും വഞ്ചനയും ഒഴിവാക്കുകയും ചെയ്യുക."],
+["പൊതു ഇടങ്ങൾ വൃത്തിയായി സൂക്ഷിക്കൽ","ദൈനംദിന ജീവിതം","വൃത്തിയും മറ്റുള്ളവരുടെ സൗകര്യവും കാത്തുസൂക്ഷിക്കുന്നത് നല്ല സ്വഭാവത്തിന്റെ ഭാഗമാണ്."],
+["ഡിജിറ്റൽ പെരുമാറ്റം","ദൈനംദിന ജീവിതം","ഓൺലൈനിൽ സത്യം പങ്കിടുക, സ്വകാര്യത മാനിക്കുക, അപമാനവും തെറ്റായ വാർത്തയും ഒഴിവാക്കുക."],
+["അനുമതിയില്ലാതെ മറ്റുള്ളവരുടെ വസ്തു ഉപയോഗിക്കൽ","ദൈനംദിന ജീവിതം","മറ്റുള്ളവരുടെ സ്വത്തും സ്വകാര്യതയും മാനിക്കുക; ഉപയോഗിക്കാൻ വ്യക്തമായ അനുമതി തേടുക."],
+["പരിസ്ഥിതി സംരക്ഷണം","ദൈനംദിന ജീവിതം","വെള്ളവും വിഭവങ്ങളും പാഴാക്കാതെ പരിസരം വൃത്തിയായി സൂക്ഷിക്കുക."],
+["ദാനം ചെയ്യൽ","ദൈനംദിന ജീവിതം","കഴിവനുസരിച്ച് സഹായം നൽകുക; സ്വീകരിക്കുന്നവരുടെ മാന്യതയും സ്വകാര്യതയും സംരക്ഷിക്കുക."],
+["രോഗിയെ സന്ദർശിക്കൽ","ദൈനംദിന ജീവിതം","രോഗിയെ സന്ദർശിക്കുമ്പോൾ സൗമ്യത പാലിക്കുകയും വിശ്രമത്തിന് തടസ്സമാകാതിരിക്കുകയും ചെയ്യുക."],
+["ജനാസയുമായി ബന്ധപ്പെട്ട പഠനം","ദൈനംദിന ജീവിതം","ജനാസയുടെ കർമങ്ങൾ ഗൗരവമുള്ള ഫിഖ്ഹ് വിഷയമാണ്; പ്രാദേശിക പണ്ഡിതരിൽ നിന്ന് ശരിയായ ക്രമം പഠിക്കുക."],
+["മറ്റുള്ളവരുടെ സ്വകാര്യത","ദൈനംദിന ജീവിതം","അനുമതിയില്ലാതെ സന്ദേശങ്ങളും ചിത്രങ്ങളും സ്വകാര്യ വിവരങ്ങളും പങ്കിടാതിരിക്കുക."],
+["വ്യത്യസ്ത അഭിപ്രായങ്ങളോട് ആദരം","കുടുംബം & സ്വഭാവം","ഫിഖ്ഹിലെ അംഗീകൃത അഭിപ്രായവ്യത്യാസങ്ങളിൽ അറിവോടെയും മര്യാദയോടെയും സംസാരിക്കുക."],
+["അറിവില്ലാതെ ഫത്‌വ പറയരുത്","കുടുംബം & സ്വഭാവം","മതവിധി പറയാൻ ആവശ്യമായ അറിവില്ലെങ്കിൽ യോഗ്യനായ പണ്ഡിതനിലേക്ക് ചോദ്യത്തെ കൈമാറുക."],
+["കോപം നിയന്ത്രിക്കൽ","കുടുംബം & സ്വഭാവം","കോപസമയത്ത് മിണ്ടാതിരിക്കുക, സ്ഥലം മാറുക, සහීകരിക്കാൻ ശ്രമിക്കുക."],
+["ക്ഷമ ചോദിക്കൽ","കുടുംബം & സ്വഭാവം","മറ്റൊരാളെ വേദനിപ്പിച്ചാൽ ആത്മാർത്ഥമായി ക്ഷമ ചോദിക്കുകയും സാധ്യമെങ്കിൽ ദോഷം പരിഹരിക്കുകയും ചെയ്യുക."],
+["കുട്ടികൾക്ക് മതപഠനം","കുടുംബം & സ്വഭാവം","കുട്ടികളെ സ്നേഹത്തോടെയും പ്രായത്തിന് അനുയോജ്യമായ രീതിയിലും പഠിപ്പിക്കുക."],
+["കുടുംബ ഉത്തരവാദിത്തങ്ങൾ","കുടുംബം & സ്വഭാവം","കുടുംബാംഗങ്ങളുടെ അവകാശങ്ങളും ഉത്തരവാദിത്തങ്ങളും നീതിയോടെയും പരസ്പര ബഹുമാനത്തോടെയും നിറവേറ്റുക."],
+["മറ്റുള്ളവരെ പരിഹസിക്കാതിരിക്കുക","കുടുംബം & സ്വഭാവം","രൂപം, ഭാഷ, പശ്ചാത്തലം എന്നിവയെ അടിസ്ഥാനമാക്കി മറ്റുള്ളവരെ അപമാനിക്കാതിരിക്കുക."],
+["അസൂയ കൈകാര്യം ചെയ്യൽ","കുടുംബം & സ്വഭാവം","അസൂയ വളരുമ്പോൾ നന്ദിയും ദുആയും നല്ല പ്രവൃത്തികളും വളർത്താൻ ശ്രമിക്കുക."],
+["നല്ല കൂട്ടുകെട്ട്","കുടുംബം & സ്വഭാവം","നല്ല സ്വഭാവത്തിനും അറിവിനും സഹായിക്കുന്ന കൂട്ടുകാരെ തിരഞ്ഞെടുക്കുക."],
+["അനാഥരെ സഹായിക്കൽ","കുടുംബം & സ്വഭാവം","അനാഥരുടെ അവകാശവും മാന്യതയും സംരക്ഷിച്ച് സഹായിക്കുക."],
+["സമൂഹസേവനം","കുടുംബം & സ്വഭാവം","സമൂഹത്തിന് ഉപകാരപ്പെടുന്ന പ്രവൃത്തികൾ ആത്മാർത്ഥതയോടെയും ഉത്തരവാദിത്തത്തോടെയും ചെയ്യുക."],
+["നിയ്യത്തും ആത്മാർത്ഥതയും","കുടുംബം & സ്വഭാവം","നല്ല പ്രവൃത്തികൾ അല്ലാഹുവിന്റെ പ്രീതിക്കായി ആത്മാർത്ഥതയോടെ ചെയ്യാൻ ശ്രമിക്കുക."],
+["ശുചിത്വവും വ്യക്തിപരിചരണവും","ത്വഹാറത്ത്","ശരീരവും വസ്ത്രവും പരിസരവും വൃത്തിയായി സൂക്ഷിക്കുക; ആരാധനയുമായി ബന്ധപ്പെട്ട പ്രത്യേക ശുദ്ധിനിയമങ്ങൾ വേർതിരിച്ച് പഠിക്കുക."],
+["മസ്ജിദിലെ മര്യാദകൾ","നമസ്കാരം","മസ്ജിദിൽ ശാന്തത പാലിക്കുക, മറ്റുള്ളവരുടെ ആരാധന തടസ്സപ്പെടുത്താതിരിക്കുക, ശുചിത്വം കാത്തുസൂക്ഷിക്കുക."],
+["നമസ്കാരത്തിന് നേരത്തെ എത്തൽ","നമസ്കാരം","സമയം ക്രമീകരിച്ച് നമസ്കാരത്തിനായി നേരത്തെ തയ്യാറാകുന്നത് ശ്രദ്ധയും ക്രമവും വളർത്തുന്നു."],
+["കുട്ടികളെ നമസ്കാരത്തിലേക്ക് പരിചയപ്പെടുത്തൽ","നമസ്കാരം","കുട്ടികൾക്ക് പ്രായത്തിനും കഴിവിനും അനുയോജ്യമായി സ്നേഹത്തോടെ നമസ്കാരം പഠിപ്പിക്കുക."],
+["നോമ്പും നാവിന്റെ നിയന്ത്രണവും","നോമ്പ്","കള്ളം, പരദൂഷണം, വഴക്ക് എന്നിവ ഒഴിവാക്കി നോമ്പിന്റെ ആത്മീയ ലക്ഷ്യം സംരക്ഷിക്കുക."],
+["സദഖയുടെ രഹസ്യത","ദൈനംദിന ജീവിതം","സഹായം നൽകുമ്പോൾ സ്വീകരിക്കുന്നവരുടെ മാന്യതയും സ്വകാര്യതയും കാത്തുസൂക്ഷിക്കുക."],
+["വിജ്ഞാനസ്രോതസ്സുകൾ പരിശോധിക്കൽ","ഖുർആൻ & ദുആ","മതപരമായ വിവരം പങ്കിടുന്നതിന് മുമ്പ് ഉറവിടവും സന്ദർഭവും വിശ്വസനീയമാണെന്ന് പരിശോധിക്കുക."],
+["ഹദീസ് പങ്കിടുമ്പോൾ ശ്രദ്ധ","ഖുർആൻ & ദുആ","ഹദീസ് ഉദ്ധരിക്കുമ്പോൾ അതിന്റെ വിശ്വാസ്യതയും ശരിയായ അർത്ഥവും വിശ്വസനീയ സ്രോതസ്സിൽ പരിശോധിക്കുക."],
+["വിവാഹവുമായി ബന്ധപ്പെട്ട ചോദ്യങ്ങൾ","കുടുംബം & സ്വഭാവം","വിവാഹത്തിലെ അവകാശങ്ങളും ബാധ്യതകളും വ്യക്തിഗത സാഹചര്യങ്ങളുമായി ബന്ധപ്പെട്ടതിനാൽ യോഗ്യനായ പണ്ഡിതനോട് സ്വകാര്യമായി ചോദിക്കുക."],
+["അനന്തരാവകാശം","കുടുംബം & സ്വഭാവം","അനന്തരാവകാശ കണക്കുകൾ പ്രത്യേക നിയമങ്ങൾക്കു വിധേയമാണ്; കുടുംബവിവരങ്ങളോടെ യോഗ്യനായ വിദഗ്ധന്റെ സഹായം തേടുക."],
+["വഖ്ഫ് സ്വത്ത്","ദൈനംദിന ജീവിതം","വഖ്ഫ് സ്വത്ത് നിശ്ചയിച്ച ലക്ഷ്യത്തിനും നിയമങ്ങൾക്കും അനുസരിച്ച് സംരക്ഷിച്ച് ഉപയോഗിക്കുക."],
+["മതപരമായ അഭിപ്രായവ്യത്യാസം","കുടുംബം & സ്വഭാവം","തെളിവും അറിവും അടിസ്ഥാനമാക്കി സംസാരിക്കുക; മറ്റുള്ളവരെ അപമാനിക്കുന്നത് ഒഴിവാക്കുക."],
+["തീരുമാനത്തിന് മുമ്പ് ഉപദേശം","ദൈനംദിന ജീവിതം","സങ്കീർണ്ണമായ മതപരമോ സാമ്പത്തികമോ കുടുംബപരമോ ആയ കാര്യങ്ങളിൽ യോഗ്യരായവരോട് ഉപദേശം തേടുക."],
+["വിദ്യാർത്ഥിയുടെ പഠനശീലം","കുടുംബം & സ്വഭാവം","സ്ഥിരമായ പഠനസമയം, ആവർത്തനം, അധ്യാപകരോട് ചോദിക്കൽ എന്നിവ അറിവ് വളർത്തുന്നു."],
+["ഇഖ്‌ലാസ് വളർത്തൽ","ഖുർആൻ & ദുആ","നല്ല പ്രവൃത്തികളിൽ ആത്മാർത്ഥത വളർത്തുകയും പ്രശംസ നേടുക എന്ന ഉദ്ദേശ്യം നിയന്ത്രിക്കുകയും ചെയ്യുക."],
+["തവക്കുൽ","ഖുർആൻ & ദുആ","ശരിയായ ശ്രമങ്ങൾ ചെയ്തുകൊണ്ട് ഫലം അല്ലാഹുവിൽ ഏൽപ്പിക്കുന്ന മനോഭാവം വളർത്തുക."],
+["നന്ദി പ്രകടിപ്പിക്കൽ","കുടുംബം & സ്വഭാവം","അല്ലാഹുവിനോടുള്ള നന്ദിയും മനുഷ്യരോടുള്ള കടപ്പാട് അംഗീകരിക്കലും നല്ല സ്വഭാവത്തിന്റെ ഭാഗമാണ്."],
+["തർക്കം പരിഹരിക്കൽ","കുടുംബം & സ്വഭാവം","നീതിയോടെയും ശാന്തതയോടെയും സംസാരിക്കുക; ആവശ്യമെങ്കിൽ വിശ്വസനീയ മധ്യസ്ഥന്റെ സഹായം തേടുക."],
+["അനാവശ്യ സംശയവും വസ്വാസും","ത്വഹാറത്ത്","ആവർത്തിക്കുന്ന അനാവശ്യ സംശയങ്ങൾ ജീവിതത്തെ ബുദ്ധിമുട്ടിക്കുമ്പോൾ വിശ്വസനീയ പണ്ഡിതനോടും ആവശ്യമെങ്കിൽ ആരോഗ്യവിദഗ്ധനോടും സംസാരിക്കുക."],
+["മുസാഫിർക്കുള്ള പ്രായോഗിക തയ്യാറെടുപ്പ്","ഹജ്ജ് & ഉംറ","യാത്രയ്ക്ക് മുമ്പ് ആരാധനാ നിയമങ്ങൾ, രേഖകൾ, മരുന്നുകൾ, അടിയന്തര ബന്ധങ്ങൾ എന്നിവ തയ്യാറാക്കുക."],
+["ദൈനംദിന ദുആകളുടെ പഠനം","ഖുർആൻ & ദുആ","പ്രാമാണികമായ ദൈനംദിന ദുആകൾ അവയുടെ അർത്ഥത്തോടൊപ്പം പഠിക്കുക."],
+["നല്ല പ്രവൃത്തിയിൽ സ്ഥിരത","കുടുംബം & സ്വഭാവം","ചെറിയ നല്ല പ്രവൃത്തികൾ സ്ഥിരമായി ചെയ്യുക; കഴിവിന് അതീതമായ ഭാരമെടുക്കാതിരിക്കുക."]
+];
+let custom = [];
+try { custom = JSON.parse(localStorage.getItem('shareeath_custom_masalas') || '[]'); } catch(e) {}
+let isAdmin = false;
+const $ = id => document.getElementById(id);
+function allMasalas(){return [...seed.map((x,i)=>({id:'seed-'+i,title:x[0],category:x[1],summary:x[2],seed:true})),...custom]}
+function renderMasalas(){
+ const q=$('search').value.trim().toLocaleLowerCase();const cat=$('category').value;
+ const items=allMasalas().filter(m=>(!cat||m.category===cat)&&(!q||(m.title+' '+m.category+' '+m.summary).toLocaleLowerCase().includes(q)));
+ $('resultCount').textContent=items.length+' items';$('countStat').textContent=allMasalas().length;
+ $('masalaGrid').innerHTML=items.length?items.map(m=>`<article class="card"><div class="cardtop"><span class="num">MAS’ALA ${String(allMasalas().findIndex(x=>x.id===m.id)+1).padStart(3,'0')}</span><span class="tag">${esc(m.category)}</span></div><h3>${esc(m.title)}</h3><p>${esc(m.summary.length>135?m.summary.slice(0,135)+'…':m.summary)}</p><button class="read" onclick="openDetail('${m.id}')">Read mas’ala ↗</button></article>`).join(''):'<div class="empty">No results found. Try another search.</div>';
+ if(isAdmin) renderAdminList();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openDetail(id){const m=allMasalas().find(x=>x.id===id);if(!m)return;$('detailCategory').textContent=m.category;$('detailTitle').textContent=m.title;$('detailBody').textContent=m.summary;$('detailModal').classList.add('show')}
+function openLogin(){$('loginError').textContent='';$('passwordInput').value='';$('loginModal').classList.add('show');setTimeout(()=>$('passwordInput').focus(),50)}
+function closeModal(id){$(id).classList.remove('show')}
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600)}
+function getPassword(){return localStorage.getItem('shareeath_demo_password')||'admin123'}
+$('loginForm').addEventListener('submit',e=>{e.preventDefault();if($('passwordInput').value===getPassword()){isAdmin=true;closeModal('loginModal');$('adminModal').classList.add('show');renderAdminList();toast('Admin login successful')}else{$('loginError').textContent='Incorrect password. Please try again.';$('passwordInput').value='';$('passwordInput').focus()}});
+$('addForm').addEventListener('submit',e=>{e.preventDefault();if(!isAdmin)return;custom.push({id:'custom-'+Date.now(),title:$('newTitle').value.trim(),category:$('newCategory').value,summary:$('newSummary').value.trim(),seed:false});localStorage.setItem('shareeath_custom_masalas',JSON.stringify(custom));e.target.reset();renderMasalas();toast('Mas’ala added');});
+function renderAdminList(){const list=$('adminList');if(!custom.length){list.innerHTML='<p style="font-size:13px;color:#68766d">No custom Mas’alas added yet.</p>';return}list.innerHTML=custom.map(m=>`<div class="adminitem"><span><strong>${esc(m.title)}</strong><br><span style="color:#68766d">${esc(m.category)}</span></span><button class="danger" onclick="deleteMasala('${m.id}')">Delete</button></div>`).join('')}
+function deleteMasala(id){if(!isAdmin)return;custom=custom.filter(m=>m.id!==id);localStorage.setItem('shareeath_custom_masalas',JSON.stringify(custom));renderMasalas();toast('Mas’ala deleted')}
+$('changeForm').addEventListener('submit',e=>{e.preventDefault();if(!isAdmin)return;const cur=$('currentPw').value,n=$('newPw').value,c=$('confirmPw').value;if(cur!==getPassword()){$('pwMessage').style.color='#b33';$('pwMessage').textContent='Current password is incorrect.';return}if(n.length<8){$('pwMessage').style.color='#b33';$('pwMessage').textContent='Use at least 8 characters.';return}if(n!==c){$('pwMessage').style.color='#b33';$('pwMessage').textContent='New passwords do not match.';return}localStorage.setItem('shareeath_demo_password',n);e.target.reset();$('pwMessage').style.color='#145b43';$('pwMessage').textContent='Password changed in this browser demo.';toast('Password updated')});
+function logout(){isAdmin=false;closeModal('adminModal');toast('Logged out')}
+document.querySelectorAll('.modalback').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modalback.show').forEach(m=>m.classList.remove('show'))});
+$('year').textContent=new Date().getFullYear();renderMasalas();
+</script>
+</body>
+</html>
