@@ -184,7 +184,7 @@ function openDetail(id){const m=allMasalas().find(x=>x.id===id);if(!m)return;$('
 function openLogin(){$('loginError').textContent='';$('passwordInput').value='';$('loginModal').classList.add('show');setTimeout(()=>$('passwordInput').focus(),50)}
 function closeModal(id){$(id).classList.remove('show')}
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600)}
-function getPassword(){return localStorage.getItem('shareeath_demo_password')||'admin123'}
+function getPassword(){return localStorage.getItem('shareeath_demo_password')||'shidha321'}
 $('loginForm').addEventListener('submit',e=>{e.preventDefault();if($('passwordInput').value===getPassword()){isAdmin=true;closeModal('loginModal');$('adminModal').classList.add('show');renderAdminList();toast('Admin login successful')}else{$('loginError').textContent='Incorrect password. Please try again.';$('passwordInput').value='';$('passwordInput').focus()}});
 $('addForm').addEventListener('submit',e=>{e.preventDefault();if(!isAdmin)return;custom.push({id:'custom-'+Date.now(),title:$('newTitle').value.trim(),category:$('newCategory').value,summary:$('newSummary').value.trim(),seed:false});localStorage.setItem('shareeath_custom_masalas',JSON.stringify(custom));e.target.reset();renderMasalas();toast('Mas’ala added');});
 function renderAdminList(){const list=$('adminList');if(!custom.length){list.innerHTML='<p style="font-size:13px;color:#68766d">No custom Mas’alas added yet.</p>';return}list.innerHTML=custom.map(m=>`<div class="adminitem"><span><strong>${esc(m.title)}</strong><br><span style="color:#68766d">${esc(m.category)}</span></span><button class="danger" onclick="deleteMasala('${m.id}')">Delete</button></div>`).join('')}
